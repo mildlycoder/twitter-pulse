@@ -1,9 +1,9 @@
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
 
-query = "(from:mildlyCoder)"
+query = "java"
 tweets = []
-limit = 5000
+limit = 2
 
 
 for tweet in sntwitter.TwitterSearchScraper(query).get_items():
@@ -15,7 +15,7 @@ for tweet in sntwitter.TwitterSearchScraper(query).get_items():
     else:
         tweets.append([tweet.date, tweet.username, tweet.content])
         
-df = pd.DataFrame(tweets, columns=['Date', 'User', 'Tweet'])
+df = pd.DataFrame(tweets, columns=['Date', 'User', 'tweet'])
 print(df)
 
 # to save to csv
